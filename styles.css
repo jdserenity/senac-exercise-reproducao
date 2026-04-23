@@ -1,4 +1,6 @@
-html, body, h1, h2, h3, h4, p, a { margin: 0; padding: 0; } *, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root { --small-padding: 8px; }
 
 body {
   width: 100vw;
@@ -15,22 +17,29 @@ body {
 aside {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  width: 220px;
   background-image: linear-gradient(rgb(42, 2, 173), rgb(127, 21, 183));
   color: white;
-  padding-block-start: 20px;
-  padding-inline-start: 20px;
-  padding-inline-end: 40px;
+  padding-block-start: 10px;
+  padding-inline: 20px;
 }
 
-h2 {
-  align-self: center;
-}
+h2 { align-self: center; }
 
 a {
   color: white;
   text-decoration: none;
-  font-weight: 200;
+  font-size: 14px;
+  font-weight: 400;
+  height: 32px;
+  padding-block-start: 5px;
+  padding-inline: var(--small-padding);
+}
+
+a:hover {
+    background-color: rgba(223, 223, 223, 0.349);
+    border-radius: 5px;
 }
 
 .container {
@@ -43,16 +52,15 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  background-image: linear-gradient(90deg, orange, red);
+  background-image: linear-gradient(90deg, rgba(228, 102, 0, 0.795), red);
   color: white;
+  height: 50px;
   width: 100%;
   padding-inline: 15px;
   padding-block: 5px;
 }
 
-h1 {
-  font-size: 28px;
-}
+h1 { font-size: 28px; }
 
 header p {
   background-color: white;
@@ -64,28 +72,62 @@ header p {
   padding-inline: 8px;
 }
 
-main {
-  padding: 15px;
-}
+main { padding: 15px; }
 
 .cards {
   display: flex;
   justify-content: space-evenly;
   gap: 15px;
+  margin-block-end: 15px;
 }
 
 .cards article {
-  background-color: lightblue;
+  background-color: rgb(231, 231, 231);
   border-radius: 5px;
-  width: 100%;
+  flex-grow: 1; flex-shrink: 1; flex-basis: 0;
+  padding-block: calc(var(--small-padding) * 1.5);
+  padding-inline: calc(var(--small-padding) * 2);
 }
 
-.cards h3 {
-  font-size: 14px;
-}
+.cards h3 { font-size: 14px; }
 
-.cards p {
-  font-size: 12px;
-}
+.cards p { font-size: 12px; }
+
+.cards article:nth-child(2) { flex-grow: 1.5; }
 
 .atividades h3 { font-size: 16px; }
+
+.lista-atividades {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small-padding);
+}
+
+.item {
+    display: flex;
+    background-color: rgba(248, 248, 248, 0.877);
+    padding: var(--small-padding);
+    border-radius: 3px;
+    gap: var(--small-padding);
+}
+
+.item h4, .item p, .item time {
+    padding-block: calc(var(--small-padding) / 2);
+    padding-inline: var(--small-padding);
+    border-radius: 2px;
+    flex: 1;
+    font-size: 14px;
+}
+
+.item h4 {
+    background-color: pink;
+}
+
+.item p {
+    background-color: lightgreen;
+    flex-grow: 6;
+}
+
+.item time {
+    background-color: lightblue;
+}
