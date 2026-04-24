@@ -17,17 +17,17 @@ body {
 aside {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   width: 220px;
-  background-image: linear-gradient(rgb(42, 2, 173), rgb(127, 21, 183));
-  color: white;
+  gap: 10px;
   padding-block-start: 10px;
   padding-inline: 20px;
+  background-image: linear-gradient(rgb(42, 2, 173), rgb(127, 21, 183));
+  color: white;
 }
 
 h2 {
-  font-size: max(1.2rem, calc(2.5vw - 0.8rem));
   align-self: center;
+  font-size: max(1.2rem, calc(2.5vw - 0.8rem));
   margin-block-end: 5px;
 }
 
@@ -64,9 +64,7 @@ header {
   padding-block: 5px;
 }
 
-h1 {
-  font-size: clamp(18px, calc(2.5vw), 28px);
-}
+h1 { font-size: clamp(18px, calc(2.5vw), 28px); }
 
 header p {
   background-color: white;
@@ -75,7 +73,7 @@ header p {
   font-weight: 100;
   font-size: 12px;
   padding-block: 3px;
-  padding-inline: 8px;
+  padding-inline: var(--small-padding);
 }
 
 main { padding: 15px; }
@@ -125,15 +123,15 @@ main { padding: 15px; }
     font-size: 14px;
 }
 
-.item h4 {
-    background-color: pink;
+.item h4 { 
+  background-color: pink;
 }
 
 .item p {
     background-color: lightgreen;
-    flex-grow: 6;
+    flex-grow: 11;
 }
 
 .item time {
-    background-color: lightblue;
+  background-color: lightblue;
 }
